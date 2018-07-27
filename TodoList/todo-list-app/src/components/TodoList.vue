@@ -19,15 +19,13 @@
 
 <script>
 import Constant from '../constant'
-// import _ from 'lodash'
+import { mapState } from 'vuex'
 
 export default {
   name: 'todo-list',
-  computed: {
-    todoList () {
-      return this.$store.state.todoList;
-    }
-  },
+  computed: mapState([
+    'todoList'
+  ]),
   methods: {
     checked (done) {
       return done ? { checked: true } : { checked: false };
